@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliana Mariano | Clínica de Beleza e Bem-Estar</title>
+    <meta name="description" content="Clínica especializada em tratamentos faciais, corporais, laser e rejuvenescimento. Agende sua transformação!">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rosa: #87CEFA;
+            --bege: #c5daff;
+            --dourado: #00008B;
+            --escuro: #0bbaff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Header */
+        header {
+            background: rgba(255,255,255,0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.8rem;
+            color: var(--rosa);
+            font-weight: 700;
+        }
+        .menu {
+            display: flex;
+            gap: 2rem;
+        }
+        .menu a {
+            text-decoration: none;
+            color: var(--escuro);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .menu a:hover { color: var(--rosa); }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 183, 255, 0.4), rgb(255, 255, 255)), url('https://source.unsplash.com/1600x900/?spa,beauty') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(0, 153, 255);
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: var(--rosa);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #c88aa6;
+            transform: translateY(-3px);
+        }
+        
+        /* Seções */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: var(--escuro);
+        }
+        
+        /* Serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .service-info {
+            padding: 1.5rem;
+        }
+        .service-info h3 {
+            color: var(--rosa);
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Sobre */
+        .about {
+            background: var(--bege);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about img {
+            width: 100%;
+            border-radius: 15px;
+        
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Depoimentos */
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--escuro);
+            color: #ddd;
+            padding: 80px 5% 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Botão WhatsApp flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .about { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Juliana Mariano</div>
+            <div class="menu">
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Realce sua Beleza Natural</h1>
+            <p>Tratamentos estéticos de alta qualidade com tecnologia de ponta e cuidado personalizado</p>
+            <a href="#contato" class="btn">Agende sua Avaliação</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div>
+            <h2 class="section-title" style="text-align:left;">Bem-vinda à Juliana Mariano Estética</h2>
+            <p>Com mais de 10 anos de experiência, oferecemos tratamentos estéticos avançados em um ambiente acolhedor e sofisticado.</p>
+            <p>Nossa missão é ajudar você a se sentir mais bonita, confiante e bem consigo mesma, utilizando técnicas seguras e resultados naturais.</p>
+            <ul style="margin-top: 20px; line-height: 2;">
+                <li>✓ Produtos de Alta Qualidade</li>
+                <li>✓ Equipamentos de última geração</li>
+                <li>✓ Protocolos personalizados</li>
+                <li>✓ Ambiente luxuoso e relaxante</li>
+            </ul>
+        </div>
+        <img src="Logo.jpg">
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <h2 class="section-title">Nossos Principais Tratamentos</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                
+                <div class="service-info">
+                    <h3>Limpeza de Pele</h3>
+                    <p>Hidratação profunda, Dermaplanning, Máscara de argila.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-info">
+                    <h3>Peeling</h3>
+                    <p>Realizado com uma grande variedade de argilas naturais específicas para cada caso.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-info">
+                    <h3>Tratamentos Corporais</h3>
+                    <p>Massagem modeladora, drenagem linfática, Massagem Relaxante e Pedras Quentes.</p>
+                </div>
+            <div class="service-card">
+                <div class="service-info">
+                    <h3>Microagulhamento</h3>
+                    <p>Consiste em praticar micromachucados na superfíce da pele fazendo-a.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section>
+        <h2 class="section-title">O que nossas clientes dizem</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <div class="testimonial">
+                <p>"Melhor investimento que fiz em mim mesma. Minha pele nunca esteve tão luminosa!"</p>
+                <strong>— Ana Carolina, 34 anos</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Atendimento incrível e resultados visíveis desde a primeira sessão. Recomendo demais!"</p>
+                <strong>— Mariana Silva</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" style="background: var(--bege);">
+        <h2 class="section-title">Entre em Contato</h2>
+        <p style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+            Rua Alberto Conceição dos Santos, 1125 - Planalto • Araçatuba-SP<br>
+            (18) 99799-5275 • clinicajulianamariano@gmail.com
+        </p>
+        <div style="text-align:center;">
+            <a href="https://api.whatsapp.com/send/?phone=%2B5518997192441&text&type=phone_number&app_absent=0" target="_blank" class="btn">Falar no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="color:var(Black);">Juliana Mariano Estética</h3>
+                <p>Transformando beleza e autoestima desde 2013.</p>
+            </div>
+            <div>
+                <h4>Horário de Funcionamento</h4>
+                <p>Segunda a Sexta: 9h às 19:30h<br>Sábado: 9h às 13h</p>
+            </div>
+            <div>
+                <h4>Siga-nos</h4>
+                <p>@estetica.julianamariano</p>
+            </div>
+        </div>
+        <p style="text-align:center; margin-top:50px; opacity:0.7;">© 2026 Juliana Estética - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Botão WhatsApp flutuante -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B5518997192441&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-float">💬</a>
+
+    <script>
+        // Menu mobile simples (pode expandir depois)
+        console.log("Site de Estética carregado com sucesso!");
+    </script>
+</body>
+</html>
